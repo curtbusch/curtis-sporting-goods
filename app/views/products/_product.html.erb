@@ -1,4 +1,4 @@
-<h2><%= product.name %> </h2>
-<p><%= image_tag(product.image) %></p>
+<h2><%= link_to product.name, product_path(product) %> </h2>
+
 <p> $<%= product.price %> </p>
 <p> qty: <%= product.quantity %> </p>

@@ -1,5 +1,5 @@
 class Product < ApplicationRecord
-  belongs_to :category, foreign_key: 'categoryid'
+  belongs_to :category
   has_many :ordered_products
   #has_many :orders, through: :ordered_products
 

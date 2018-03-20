@@ -1,4 +1,4 @@
-puts require 'json'
+require 'json'
 
 file = File.read('productdata.json')
 data = JSON.parse(file)

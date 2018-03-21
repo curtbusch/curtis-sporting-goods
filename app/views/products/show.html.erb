@@ -1,4 +1,7 @@
 <h2><%= @product.name %></h2>
 <p><%= @product.description %></p>
-<p><%= @product.price %></p>
-<p>qty: <%= @product.quantity %></p>
+<p>Price: $<%= @product.price %></p>
+<p>Qty: <%= @product.quantity %></p>
+<% if @product.on_sale %>
+  <p>On sale!</p>
+<% end %>

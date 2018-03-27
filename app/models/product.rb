@@ -5,7 +5,10 @@ class Product < ApplicationRecord
   #has_many :orders, through: :ordered_products
 
   #accepts_nested_attributes_for :category, allow_destroy: true
+
   validates :name, :description, :price, :quantity, :category_id, presence: true
+
+  mount_uploader :image, ImageUploader
 
   def self.search(search)
     if search

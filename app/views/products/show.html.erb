@@ -1,10 +1,16 @@
-<h2><%= @product.name %></h2>
-<% if @product.image.present? %>
-  <p><%= image_tag @product.image %></p>
-<% end %>
-<p><%= @product.description %></p>
-<p>Price: $<%= @product.price %></p>
-<p>Qty: <%= @product.quantity %></p>
-<% if @product.on_sale %>
-  <p>On sale!</p>
-<% end %>
+<div class="container">
+  <div class="card" style="width: 30rem;">
+    <div class="card-body">
+      <h2 class="card-title"><%= @product.name %></h2>
+      <% if @product.image.present? %>
+        <p ><%= image_tag @product.image %></p>
+      <% end %>
+      <p class="card-text"><%= @product.description %></p>
+      <p class="card-text"><strong>Price: $</strong><%= @product.price %></p>
+      <p class="card-text"><strong>Qty: </strong><%= @product.quantity %></p>
+      <% if @product.on_sale %>
+        <p class="card-text">On sale!</p>
+      <% end %>
+    </div>
+  </div>
+</div>

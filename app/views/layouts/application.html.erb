@@ -10,39 +10,7 @@
   </head>
 
   <body>
-  <div class="container">
-    <Header>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <%= link_to 'Curtis Sporting Goods', root_path, class: "navbar-brand" %>
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item"><%= link_to 'Home', root_path, class: "nav-link" %></li>
-            <li class="nav-item"><%= link_to 'About', root_path, class: "nav-link" %></li>
-            <li class="nav-item"><%= link_to 'Contact', root_path, class: "nav-link" %></li>
-            <% if current_page?(products_path) or current_page?(root_path) %>
-              <%= form_tag(products_path, method: :get, class: "form-inline my-2 my-lg-0") do %>
-                <%= text_field_tag :search, params[:search], class: "form-control mr-sm-2" %>
-                <%= submit_tag 'Search', name: nil, class: "btn btn-outline-success my-2 my-sm-0" %>
-              <% end %>
-            <% end %>
-          </ul>
-          <% if signed_in? %>
-            Signed in as: <%= current_user.email %>
-            <%= button_to 'Sign out', sign_out_path, method: :delete %>
-          <% else %>
-            <%= link_to 'Sign in', sign_in_path %>
-          <% end %>
-          <section>
-            <div id="flash">
-              <% flash.each do |key, value| %>
-                <div class="flash <%= key %>"><%= value %></div>
-              <% end %>
-            </div>
-          </section>
-        </div>
-      </nav>
-    </Header>
-    </div>
+    <%= render 'layouts/navigation' %>
     <%= yield %>
   </body>
 </html>

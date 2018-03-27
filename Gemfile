@@ -36,7 +36,7 @@ gem 'activeadmin'
 gem 'devise'
 gem 'kaminari'
 gem 'carrierwave'
-gem 'bootstrap-kaminari-views'
+gem 'clearance', '~> 1.15.1'
 source 'https://rails-assets.org' do
   gem 'rails-assets-bootstrap', '~> 4.0.0'
   gem 'rails-assets-jquery'

@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   include Clearance::User
 
-  has_many :addresses
-  has_many :orders
+  has_many :addresses, dependent: :destroy
+  has_many :orders, dependent: :destroy
 end

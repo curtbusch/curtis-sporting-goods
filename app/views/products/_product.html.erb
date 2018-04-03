@@ -1,16 +1,16 @@
+<div class="card" style="width: 30rem;">
+  <div class="card-body">
+    <h5 class="card-title"><%= link_to product.name, product_path(product) %></h5>
 
-  <div class="card" style="width: 30rem;">
-    <div class="card-body">
-      <h5 class="card-title"><%= link_to product.name, product_path(product) %></h5>
+    <% if product.image.present? %>
+      <p><%= image_tag product.image, width: 150, height: 150 %></p>
+    <% end %>
 
-      <% if product.image.present? %>
-        <p><%= image_tag product.image, width: 150, height: 150 %></p>
-      <% end %>
-
-      <p class="card-text"> <strong>Price: $</strong><%= product.price %> </p>
-      <p class="card-text"> <strong>Qty: </strong><%= product.quantity %> </p>
-      <% if product.on_sale %>
-        <p class="card-text">On sale!</p>
-      <% end %>
-    </div>
+    <p class="card-text"> <strong>Price: $</strong><%= product.price %> </p>
+    <p class="card-text"> <strong>Qty: </strong><%= product.quantity %> </p>
+    <% if product.on_sale %>
+      <p class="card-text">On sale!</p>
+    <% end %>
+    <%= button_to "Add to Cart", add_to_cart_product_path(product) %>
   </div>
+</div>

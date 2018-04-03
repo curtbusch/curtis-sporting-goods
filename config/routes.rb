@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
-  get 'products', to: 'products#index', as: 'products'
+  resources :products, only: [:index, :show] do
 
-  get 'products/:id', to: 'products#show', as: 'product', id: /\d+/
+    member do
+      post :add_to_cart
+    end
+  end
+
 
   root to: 'products#index'
 

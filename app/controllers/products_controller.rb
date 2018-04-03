@@ -1,4 +1,7 @@
 class ProductsController < ApplicationController
+  before_action :initialize_session
+  before_action :load_shopping_cart
+
   def index
     @products = Product.search(params[:search]).page(params[:page]).per(5)
   end
@@ -7,7 +10,21 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
   end
 
-  # def product_params
-  #   params.require(:product).permit(:search)
-  # end
+  def add_to_cart
+    id = params[:id].to_i
+
+    unless session[:cart_items].include?(id)
+      session[:cart_items] << id
+      redirect_to products_path
+    end
+  end
+
+  def load_shopping_cart
+    @cart_items = Product.find(session[:cart_items])
+  end
+
+  private
+  def initialize_session
+    session[:cart_items] ||= []
+  end
 end

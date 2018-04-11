@@ -33,7 +33,6 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 gem 'activeadmin'
 gem 'carrierwave'
-gem 'clearance', '~> 1.15.1'
 gem 'devise'
 gem 'kaminari'
 gem 'rubocop'

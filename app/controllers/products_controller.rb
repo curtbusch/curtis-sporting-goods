@@ -13,10 +13,8 @@ class ProductsController < ApplicationController
   def add_to_cart
     id = params[:id].to_i
 
-    unless session[:cart_items].include?(id)
-      session[:cart_items] << id
-      redirect_to products_path
-    end
+    session[:cart_items] << id unless session[:cart_items].include?(id)
+    redirect_to products_path
   end
 
   def load_shopping_cart
@@ -24,6 +22,7 @@ class ProductsController < ApplicationController
   end
 
   private
+
   def initialize_session
     session[:cart_items] ||= []
   end

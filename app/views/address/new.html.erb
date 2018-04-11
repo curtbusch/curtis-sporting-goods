@@ -1,3 +1,14 @@
 <div>
   <h3>Address details for <%= @user.email %></h3>
-</div>
+
+  <%= form_tag("Address", method: "post") do %>
+    <%= label_tag(:address, "Address:") %>
+    <%= text_field_tag(:address) %><br>
+    <%= label_tag(:city, "City:") %>
+    <%= text_field_tag(:city) %><br>
+    <%= label_tag(:postal_code, "Postal Code:") %>
+    <%= text_field_tag(:postal_code) %><br>
+    <%= label_tag(:province, "Province:") %>
+    <%= f.collection_select(:province, Province.all, :id, :name) %><br>
+    <%= submit_tag("Search") %>
+  <% end %>

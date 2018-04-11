@@ -3,6 +3,7 @@
   <% @cart_items.each do |cart_item|  %>
     <%= cart_item.name %>: $ <%= cart_item.price %><br>
   <% end %>
+  <%= link_to "Checkout", address_new_path %>
 </div>
 
 <div class="card-group">

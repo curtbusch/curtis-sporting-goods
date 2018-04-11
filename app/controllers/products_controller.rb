@@ -25,5 +25,6 @@ class ProductsController < ApplicationController
 
   def initialize_session
     session[:cart_items] ||= []
+    session[:user] = User.first.id
   end
 end

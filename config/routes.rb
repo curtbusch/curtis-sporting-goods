@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'addresses/new'
+
+  get 'address/new'
+
   get 'charges/new'
 
   get 'charges/create'
@@ -10,6 +14,8 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :charges, only: [:new, :create]
+  resources :address, only: [:new]
 
   root to: 'products#index'
 

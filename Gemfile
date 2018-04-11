@@ -36,6 +36,7 @@ gem 'carrierwave'
 gem 'devise'
 gem 'kaminari'
 gem 'rubocop'
+gem 'stripe'
 source 'https://rails-assets.org' do
   gem 'rails-assets-bootstrap', '~> 4.0.0'
   gem 'rails-assets-jquery'

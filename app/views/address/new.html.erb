@@ -9,6 +9,7 @@
     <%= label_tag(:postal_code, "Postal Code:") %>
     <%= text_field_tag(:postal_code) %><br>
     <%= label_tag(:province, "Province:") %>
-    <%= f.collection_select(:province, Province.all, :id, :name) %><br>
-    <%= submit_tag("Search") %>
+    <%= collection_select(:lang_id, 0, @provinces, :id, :name) %><br>
+    <%= submit_tag("Proceed to payment") %>
   <% end %>
+</div>

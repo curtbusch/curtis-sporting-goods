@@ -3,7 +3,11 @@ class ProductsController < ApplicationController
   before_action :load_shopping_cart
 
   def index
-    @products = Product.search(params[:search]).order(:name).page(params[:page]).per(5)
+    if(!params.has_key?(:category_id) || params[:category_id] == '8')
+      @products = Product.search(params[:search]).order(:name).page(params[:page]).per(5)
+    else
+      @products = Product.where(category_id: params[:category_id]).search(params[:search]).order(:name).page(params[:page]).per(5)
+    end
   end
 
   def show

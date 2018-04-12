@@ -1,0 +1,1 @@
+puts Product.first.inspect

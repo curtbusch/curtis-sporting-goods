@@ -1,7 +1,7 @@
 <div>
   <h3>Address details for <%= @user.email %></h3>
 
-  <%= form_tag("Address", method: "post") do %>
+  <%= form_tag("add_to_db", method: "post") do %>
     <%= label_tag(:address, "Address:") %>
     <%= text_field_tag(:address) %><br>
     <%= label_tag(:city, "City:") %>
@@ -9,7 +9,7 @@
     <%= label_tag(:postal_code, "Postal Code:") %>
     <%= text_field_tag(:postal_code) %><br>
     <%= label_tag(:province, "Province:") %>
-    <%= collection_select(:lang_id, 0, @provinces, :id, :name) %><br>
+    <%= collection_select(:province, 0, @provinces, :id, :name) %><br>
     <%= submit_tag("Proceed to payment") %>
   <% end %>
 </div>

@@ -3,7 +3,7 @@ class ProductsController < ApplicationController
   before_action :load_shopping_cart
 
   def index
-    @products = Product.search(params[:search]).page(params[:page]).per(5)
+    @products = Product.search(params[:search]).order(:name).page(params[:page]).per(5)
   end
 
   def show

@@ -3,10 +3,14 @@
   <% @cart_items.each do |cart_item|  %>
     <%= cart_item.name %>: $ <%= cart_item.price %><br>
   <% end %>
-</div>
+</div><br>
 
 <div>
-  
+  <p>Sort by:</p>
+  <ul class="list-group">
+    <li class="list-group-item"><%= link_to "On sale", products_path(filter: 'sale')%></li>
+    <li class="list-group-item"><%= link_to "Date added", products_path(filter: 'new')%></li>
+  </ul>
 </div>
 
 <div class="card-group">

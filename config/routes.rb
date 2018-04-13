@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  get 'pages/show'
+
   get 'orders/new'
 
   get 'addresses/new'
@@ -19,6 +22,7 @@ Rails.application.routes.draw do
   resources :charges, only: [:new, :create]
   resources :address, only: [:new]
   resources :orders, only: [:new]
+
   post 'address/add_to_db'
   root to: 'products#index'
 

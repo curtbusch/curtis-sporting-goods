@@ -8,6 +8,7 @@
 
     <p class="card-text"> <strong>Price: $</strong><%= product.price %> </p>
     <p class="card-text"> <strong>Qty: </strong><%= product.quantity %> </p>
+    <p class="card-text"> <strong>Date added: </strong><%= product.created_at.to_s[0..10] %></p>
     <% if product.on_sale %>
       <p class="card-text">On sale!</p>
     <% end %>

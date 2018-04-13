@@ -8,6 +8,14 @@ class ProductsController < ApplicationController
     else
       @products = Product.where(category_id: params[:category_id]).search(params[:search]).order(:name).page(params[:page]).per(5)
     end
+
+    if(params.has_key?(:filter))
+      if(params[:filter] == 'sale')
+        @products = @products.where(on_sale: true)
+      else
+        @products = @products.where("created_at > ?", 7.days.ago)
+      end
+    end
   end
 
   def show

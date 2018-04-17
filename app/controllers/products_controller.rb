@@ -16,6 +16,10 @@ class ProductsController < ApplicationController
         @products = @products.where("created_at > ?", 7.days.ago)
       end
     end
+
+    if(params.has_key?(:category_index))
+      @products = Product.where(category_id: params[:category_index]).order(:name).page(params[:page]).per(5)
+    end
   end
 
   def show
